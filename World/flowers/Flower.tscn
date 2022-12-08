@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Shaders/wobble.shader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.305882, 0.564706, 0.341176, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 1
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = false
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = false
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/amount = 0.02
+shader_param/speed = 2.0
+shader_param/frequency = 2.0
+
+[sub_resource type="CylinderMesh" id=2]
+material = SubResource( 1 )
+top_radius = 0.025
+bottom_radius = 0.025
+height = 0.5
+radial_segments = 4
+rings = 0
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.576471, 0.352941, 0.654902, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 1
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = false
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = false
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/amount = 0.02
+shader_param/speed = 2.0
+shader_param/frequency = 2.0
+
+[sub_resource type="SphereMesh" id=4]
+material = SubResource( 3 )
+radius = 0.1
+height = 0.2
+
+[node name="Flower" type="MeshInstance"]
+mesh = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+mesh = SubResource( 4 )

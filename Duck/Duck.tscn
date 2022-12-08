@@ -1,0 +1,268 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Shaders/wobble.shader" type="Shader" id=1]
+[ext_resource path="res://Duck/Duck.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/quack.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/walk.wav" type="AudioStream" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.5
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.85098, 0.796078, 0.643137, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 1
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = false
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = false
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/amount = 0.02
+shader_param/speed = 2.0
+shader_param/frequency = 2.0
+
+[sub_resource type="CapsuleMesh" id=2]
+material = SubResource( 7 )
+radius = 0.25
+mid_height = 0.5
+radial_segments = 8
+rings = 4
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.105882, 0.219608, 0.235294, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 1
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = false
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = false
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/amount = 0.02
+shader_param/speed = 2.0
+shader_param/frequency = 2.0
+
+[sub_resource type="CapsuleMesh" id=3]
+material = SubResource( 8 )
+radius = 0.1
+mid_height = 0.5
+radial_segments = 4
+rings = 2
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.211765, 0.537255, 0.364706, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 1
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = false
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = false
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/amount = 0.02
+shader_param/speed = 2.0
+shader_param/frequency = 2.0
+
+[sub_resource type="SphereMesh" id=4]
+material = SubResource( 9 )
+radius = 0.2
+height = 0.4
+radial_segments = 8
+rings = 4
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.898039, 0.662745, 0.12549, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 1
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = false
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = false
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/amount = 0.02
+shader_param/speed = 2.0
+shader_param/frequency = 2.0
+
+[sub_resource type="CapsuleMesh" id=5]
+material = SubResource( 10 )
+radius = 0.1
+mid_height = 0.1
+radial_segments = 4
+rings = 2
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_unshaded = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id=12]
+material = SubResource( 13 )
+size = Vector2( 0.1, 0.1 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0.898039, 0.662745, 0.12549, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 1
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = false
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = false
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/amount = 0.02
+shader_param/speed = 2.0
+shader_param/frequency = 2.0
+
+[sub_resource type="SphereMesh" id=6]
+material = SubResource( 11 )
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SpatialMaterial" id=14]
+flags_unshaded = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id=15]
+material = SubResource( 14 )
+size = Vector2( 0.1, 0.1 )
+
+[node name="Duck" type="KinematicBody"]
+collision/safe_margin = 0.1
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Body" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+mesh = SubResource( 2 )
+
+[node name="Neck" type="MeshInstance" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.25, -0.2 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+
+[node name="Head" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.1 )
+mesh = SubResource( 4 )
+
+[node name="Bill" type="MeshInstance" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25 )
+mesh = SubResource( 5 )
+skeleton = NodePath("../..")
+
+[node name="QuackParticles" type="CPUParticles" parent="Head/Bill"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1 )
+emitting = false
+amount = 4
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource( 12 )
+direction = Vector3( 0, 0, -1 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+damping = 100.0
+
+[node name="GrabRay" type="RayCast" parent="Head/Bill"]
+enabled = true
+cast_to = Vector3( 0, 0, -2 )
+
+[node name="GrabPoint" type="Position3D" parent="Head/Bill"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25 )
+
+[node name="LeftFoot" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0 )
+mesh = SubResource( 6 )
+
+[node name="RightFoot" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0 )
+mesh = SubResource( 6 )
+
+[node name="LeftRay" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.15, -0.3 )
+enabled = true
+
+[node name="RightRay" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.15, -0.3 )
+enabled = true
+
+[node name="WalkPoint" type="Position3D" parent="."]
+
+[node name="ArmBase" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="SpringArm" type="SpringArm" parent="ArmBase"]
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0 )
+spring_length = 8.0
+
+[node name="Camera" type="Camera" parent="ArmBase/SpringArm"]
+transform = Transform( 1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0 )
+near = 0.5
+
+[node name="WalkParticles" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3 )
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+mesh = SubResource( 15 )
+direction = Vector3( 0, 1, 1 )
+initial_velocity = 4.0
+
+[node name="WalkTimer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.2
+one_shot = true
+
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -12.0
+
+[node name="Quack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
